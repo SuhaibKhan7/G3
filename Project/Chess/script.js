@@ -23,7 +23,7 @@ function switchPlayer()
 {
 currentscore=0;
 document.querySelector(`#current--${activeplayer}`).textContent=currentscore;
-document.querySelector(`.player--${activeplayer}`).classList.remove('player--active')
+
 activeplayer=activeplayer==0?1:0;
 document.querySelector(`.player--${activeplayer}`).classList.add('player--active');
 
