@@ -30,3 +30,9 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+
+const message=document.createElement('h1');
+message.textContent="welcome";
+const header=document.querySelector('.header');
+header.after(message);
