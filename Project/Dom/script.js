@@ -36,3 +36,36 @@ const message=document.createElement('h1');
 message.textContent="welcome";
 const header=document.querySelector('.header');
 header.before(message);
+
+let randNo=(min,max)=>Math.floor(Math.random()*(max-min)+1);
+let randColor=()=>`rgb(${randNo(0,255)}, ${randNo(0,255)}, ${randNo(0,255)})`;
+
+document.querySelectorAll('.nav__link').forEach(element=>{
+
+  element.addEventListener('click',function(e)
+  {
+    this.style.backgroundColor=randColor();
+
+  })
+});
+
+
+// array.forEach(element => {
+  
+// });
+// .addEventListener('click',function(){
+// this.style.backgroundColor=randColor();
+// })
+
+// document.querySelector('.nav__links').addEventListener('click',function(e){
+//   this.style.backgroundColor=randColor();
+//   e.stopPropagation();
+//   })
+//   document.querySelector('.nav').addEventListener('click',function(e){
+//     this.style.backgroundColor=randColor();
+
+//     })
+
+//     document.querySelector('body').addEventListener('click',function(){
+//       this.style.backgroundColor=randColor();
+//       })
