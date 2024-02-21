@@ -35,4 +35,4 @@ document.addEventListener('keydown', function (e) {
 const message=document.createElement('h1');
 message.textContent="welcome";
 const header=document.querySelector('.header');
-header.after(message);
+header.before(message);
