@@ -32,22 +32,54 @@ document.addEventListener('keydown', function (e) {
 });
 
 
-const message=document.createElement('h1');
-message.textContent="welcome";
-const header=document.querySelector('.header');
-header.before(message);
 
-let randNo=(min,max)=>Math.floor(Math.random()*(max-min)+1);
-let randColor=()=>`rgb(${randNo(0,255)}, ${randNo(0,255)}, ${randNo(0,255)})`;
 
-document.querySelectorAll('.nav__link').forEach(element=>{
+window.onload=logIn();
 
-  element.addEventListener('click',function(e)
-  {
-    this.style.backgroundColor=randColor();
+const storedName
+function logIn()
+{
+const usrname=document.getElementById('username').value;
 
-  })
-});
+
+
+
+}
+
+
+
+
+
+// const message=document.createElement('h1');
+// message.textContent="welcome";
+// const header=document.querySelector('.header');
+// header.before(message);
+
+// let randNo=(min,max)=>Math.floor(Math.random()*(max-min)+1);
+// let randColor=()=>`rgb(${randNo(0,255)}, ${randNo(0,255)}, ${randNo(0,255)})`;
+
+// document.querySelectorAll('.nav__link').forEach(element=>{
+
+//   element.addEventListener('click',function(e)
+//   {
+//     this.style.backgroundColor=randColor();
+
+//   })
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // array.forEach(element => {
