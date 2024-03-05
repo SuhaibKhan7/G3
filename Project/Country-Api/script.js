@@ -77,6 +77,72 @@ function renderCountry(data,className='')
 
 // })
 
+// let a=createorder()
+// .then(function(response)
+// {
+//   console.log(response);
+
+// }).catch(function(err)
+// {
+//   console.log(err)
+// })
+
+// function createorder()
+// {
+// let pr=new Promise(  function (resolve,reject){
+// //database call orderid
+//     let orderid=false;
+
+//     if(orderid)
+//     {
+//       resolve(873467832648732764)
+//     }
+//     else{
+//       reject('pro not fullfilled')
+//     }
+
+//     })
+// return pr;
+// }
+function  getCountry(country)
+{
+  let pr=fetch(`https://restcountries.com/v3.1/name/${country}`)
+.then(function(response){ 
+  console.log(response);
+  if(!response.ok)
+  {
+    // let err=new Error()
+    // throw err;
+    throw new Error(`Country not Found ${response.status}`);
+  }
 
 
+  return response.json()
 
+})
+.then(function(data){
+ console.log(data[1])
+  renderCountry(data[1])
+  let neighbour=data[1].borders[1];
+  console.log(neighbour);
+ return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`)
+}).then(function(response2){
+  if(!response2.ok)
+  {
+    throw new Error(`Neighbour Country not found ${response2.status}`)
+  }
+
+  return response2.json()
+}).then(function(data){
+  console.log(data[0]);
+  renderCountry(data[0])
+})
+.catch(function(errormsg)
+{
+  console.log(errormsg)
+  alert(errormsg);
+})
+
+}
+
+getCountry('india');
