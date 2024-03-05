@@ -36,43 +36,47 @@ function renderCountry(data,className='')
 
 
 }
+// //  get country
 
-function getCountry(country) {
-  const request = new XMLHttpRequest();
-  request.open('GET', `https://restcountries.com/v3.1/name/${country}`); // Use the 'country' parameter here
-  request.send();
+// function getCountry(country) {
+//   const request = new XMLHttpRequest();
+//   request.open('GET', `https://restcountries.com/v3.1/name/${country}`); // Use the 'country' parameter here
+//   request.send();
 
-  request.addEventListener('load', function () {
-    const data = JSON.parse(this.responseText)?.[1]; // Change to [0] instead of [1]
-    console.log(data);
+//   request.addEventListener('load', function () {
+//     const data = JSON.parse(this.responseText)?.[1]; // Change to [0] instead of [1]
+//     console.log(data);
 
-    renderCountry(data);
+//     renderCountry(data);
 
-    // For neighbor country (assuming 'borders' contains neighboring countries)
-    if (data && data.borders && data.borders.length > 0) {
+//     // For neighbor country (assuming 'borders' contains neighboring countries)
+//     if (data && data.borders && data.borders.length > 0) {
 
-        data.borders.forEach(neighborCountry => {
-          console.log(neighborCountry);
-          const request2 = new XMLHttpRequest();
-          request2.open('GET', `https://restcountries.com/v3.1/alpha/${neighborCountry}`);
-          request2.send();
+//         data.borders.forEach(neighborCountry => {
+//           console.log(neighborCountry);
+//           const request2 = new XMLHttpRequest();
+//           request2.open('GET', `https://restcountries.com/v3.1/alpha/${neighborCountry}`);
+//           request2.send();
     
-          request2.addEventListener('load', function () {
-            const data2 = JSON.parse(this.responseText)?.[0];
-            console.log(data2);
-            renderCountry(data2,'neighbour');
-        });
+//           request2.addEventListener('load', function () {
+//             const data2 = JSON.parse(this.responseText)?.[0];
+//             console.log(data2);
+//             renderCountry(data2,'neighbour');
+//         });
 
-      // const neighborCountry = data.borders[0];// Assuming the first border is a neighboring country
-      });
-    }
-  });
-}
-getCountry('india');
-document.getElementById('country').addEventListener('change',function(){
-  countriesContainer.innerHTML='';
-  const country=document.getElementById('country').value;
-  getCountry(country);
+//       // const neighborCountry = data.borders[0];// Assuming the first border is a neighboring country
+//       });
+//     }
+//   });
+// }
+// getCountry('india');
+// document.getElementById('country').addEventListener('change',function(){
+//   countriesContainer.innerHTML='';
+//   const country=document.getElementById('country').value;
+//   getCountry(country);
 
-})
+// })
+
+
+
 
