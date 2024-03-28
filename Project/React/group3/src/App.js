@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
+import './App.css'
 export default function App() {
 const[tasks,setTask]=useState([
     {id:1,name:"This is task 1",complete:true},
@@ -10,13 +11,23 @@ function taskdelete(id)
 {
 setTask(tasks.filter((t)=>t.id!=id))
 }
+const [show,setShow]=useState(true)
+function showhide()
+{
+    setShow(!show)
+}
+
+
 return(
 <div className="App">
-    <h1>Task-List</h1>
+    <h1>Task-List   <button className='btn' onClick={showhide}>Show/Hide</button>    </h1>
+   
     <ul>
-{tasks.map((task)=><li>{task.id}--------{task.name}
+{show && tasks.map((task)=>
 
-<button onClick={()=>taskdelete(task.id)}>Delete</button>
+<li key={task.id}>{task.id}--------{task.name}
+
+<button onClick={()=>taskdelete(task.id)} className='btn deletebtn'>Delete</button>
 
 </li>    )}
 
