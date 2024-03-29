@@ -1,16 +1,17 @@
-.App{
+.TaskApp{
     background-color: azure;
 }
-.App ul li{
+.TaskApp ul li{
     margin: 1.2rem;
     list-style-type: none;
 }
-.App .deletebtn{
+.TaskApp .deletebtn{
     background-color: red;
     position: relative;
     left: 30%;
+    margin:5px;
 }
-.App h1{
+.TaskApp h1{
     text-align: center;
     color: brown;
 }
