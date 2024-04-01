@@ -14,7 +14,7 @@ export default function App() {
   return (
     <>
     <Header/>
-    <AddTask setTask={setTask}/>
+    <AddTask tasks={tasks} setTask={setTask}/>
     <Task tasks={tasks} setTask={setTask}/>
     <Footer/>
 

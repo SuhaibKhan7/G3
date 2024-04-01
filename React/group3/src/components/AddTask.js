@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 import './AddTask.css'
-export default function AddTask({setTask})
+export default function AddTask({tasks,setTask,})
  {
 
 const[newtask,setnewTask]=useState('')
@@ -23,7 +23,7 @@ function addTask(e)
     name:newtask,
     complete:false
   }
-setTask([createTask])
+setTask([...tasks,createTask])
 
 }
 
