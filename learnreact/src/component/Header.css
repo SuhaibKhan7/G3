@@ -1,20 +1,24 @@
 .header{
     background-color: antiquewhite;
-    padding: 20px;
+    height: 30px;
+    padding: 10px;
+    width: 100%;
 }
 .header ul{
     display: flex;
+    flex-wrap: wrap;
 }
 .header ul li{
-    margin-right: 15px;
+    margin-right: 1.5rem;
     list-style-type: none;
 }
 .header ul a{
     text-decoration: none;
+    color: black;
 }
 .header .btn{
     background-color: red;
 }
-.btn{
-    background-color: yellowgreen;
+.topsection p{
+    color: rgb(54, 51, 51);
 }
