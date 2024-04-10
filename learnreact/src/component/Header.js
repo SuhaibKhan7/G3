@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Login from './Login'
 export default function Header() {
-    let loginVar=true;
+ const [togglelogin,setLogin]=useState(false)
   return (
     <div>
           <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -33,15 +33,15 @@ export default function Header() {
                               <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                           </li>
                       </ul>
-                      <form className="d-flex" role="search">
+                     
                           
-                              <button className="btn btn-outline-success" type="submit">Login</button>
-                      </form>
+                          <button className="btn btn-outline-success"  onClick={ ()=>setLogin(!togglelogin)}>Login</button>
+                     
                   </div>
               </div>
           </nav>
 
-    {loginVar && <Login/>}
+    {togglelogin && <Login/>}
     </div>
   )
 }
