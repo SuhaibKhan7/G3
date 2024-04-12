@@ -6,7 +6,7 @@ import CardData from './component/CardData'
 
 export default function App() {
   return (
-    <div>
+    <div className='Appcomponent'>
       <Header />
       <Topsection/>
       <CardData/>
