@@ -22,7 +22,7 @@ export default function UseEffect() {
     <div className='bg-primary text-white'>
   {
     card.map((c)=>{
-      return <li key={c.id}> {c.id}-------{c.pname}-----{c.Price}----{c.instock}</li>
+      return <li key={c.id}> {c.id}-------{c.pname}-----{c.Price}----<span >{JSON.parse(c.instock)?'Instock':'outofstock'}</span></li>
     })
   }
 
