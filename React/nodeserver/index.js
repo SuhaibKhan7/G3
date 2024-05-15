@@ -1,17 +1,18 @@
 const express = require('express')
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const server = express();
 
 //middlware
 server.use(cors())
-
+server.use(bodyParser);
 server.get('/data', (req, res) => {
     res.send({ username: 'dileep' });
 
 })
 server.post('/data', (req, res) => {
-
-    req.send({msg:'data received'});
+    console.log(req.body)
+    res.send({ msg: 'data received' });
 })
 
 
